@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="app/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="app/libs/slick/slick/slick-theme.css">
+    <link rel="stylesheet" href="app/libs/slick/slick/slick.css">
+    <link rel="stylesheet" href="app/libs/fancybox-master/dist/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="app/css/main.css">
+</head>
+<body>
+
+<header>
+    <div class="clearFix container ">
+        <div class="block-logo clearFix">
+            <a href="#" class="left brand-logo">
+                <img src="app/img/logo.svg" alt="">
+            </a>
+
+            <div class="block-select right">
+
+                <a href="#modal-city" class="modal-trigger btn select-city ">
+                    Санкт-Петербург
+                </a>
+
+            </div>
+        </div>
+
+        <div class="block-acc clearFix">
+            <div class="block-acc__inAcc dr" id="dropDown">
+                <div class="text dr">Вход</div>
+            </div>
+
+            <!--dropdown content---------------------------->
+            <div id='myDropdown' class='your-account dr'>
+
+                <ul class="account-tabs tabs dr">
+                    <li class="tab dr"><a class="dr active" href="#tabs-acc1">клиент</a></li>
+                    <li class="tab dr"><a class="dr" href="#tabs-acc2">партнёр</a></li>
+                </ul>
+
+                <div id="tabs-acc1" class="your-account__tab-content dr">
+                    <form>
+
+                        <div class="your-account__form dr">
+
+                            <input type="text" id="input-text-acc" class="dr" placeholder="Имя пользователя">
+                            <input type="password" id="input-pass" class="dr" placeholder="Пароль">
+
+                            <div class="block-check">
+                                <input type="checkbox" class="dr filled-in" checked id="check-add">
+                                <label for="check-add" class="dr">
+                                    Запомнить меня
+                                </label>
+                            </div>
+
+                            <button class="your-account__btn dr">
+                                Войти в систему
+                            </button>
+
+                            <a class="dr link-pass">
+                                Забыли пароль?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="tabs-acc2" class="your-account__tab-content dr">
+                    <form>
+
+                        <div class="your-account__form dr">
+
+                            <input type="text" id="input-text-acc-partner" class="dr" placeholder="Имя пользователя">
+                            <input type="password" id="input-pass-partner" class="dr" placeholder="Пароль">
+
+                            <div class="block-check">
+                                <input type="checkbox" class="dr filled-in" checked id="check-add-partner">
+                                <label for="check-add-partner" class="dr">
+                                    Запомнить меня
+                                </label>
+                            </div>
+
+                            <button class="your-account__btn dr">
+                                Войти в систему
+                            </button>
+
+                            <a class="dr link-pass">
+                                Забыли пароль?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <!--------------------------------------------->
+            <div class="block-acc__inAcc block-acc__inAcc_right">
+                <span class="text">Регистрация</span>
+            </div>
+        </div>
+
+        <form>
+            <div class="input-field-2">
+                <input id="search-mobil" type="search" autocomplete="off"  required>
+                <label class="label-icon" for="search-mobil">
+                    <img src="app/img/search.svg"  alt="">
+                </label>
+            </div>
+        </form>
+        <!--menu btn-->
+        <div id="menu-show"  class="block-menu  dn"></div>
+
+
+        <!-----------menu mobile--------------->
+        <div id="menu-mobile-block" class="menu-list-mobile dn">
+            <ul class="dn" id="mobile-menu">
+                <li class="clearFix">
+                    <div class="block-acc-2 clearFix">
+                        <div class="block-acc-2__inAcc">
+                            <a class="text modal-trigger" href="#reger-modal-mobil">Вход</a>
+                        </div>
+                        <!--------------------------------------------->
+                        <div class="block-acc-2__inAcc block-acc-2__inAcc_right">
+                            <span class="text">Регистрация</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+                <li>
+                    <button data-target="modal-application" class="menu-list-mobile__btn modal-trigger">
+                        Создать заявку
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<!--block city mobil v-->
+<div class="block-city-mobil clearFix">
+    <span class="block-city-mobil__text">Регион:</span>
+    <a href="#modal-city" class="modal-trigger btn select-city-mobil ">
+        Санкт-Петербург
+    </a>
+</div>
+<!--меню-->
+<section class="top-line ">
+
+    <div class="container">
+
+        <div class="nav-wrapper">
+            <a href="#modal-application" class="btn top-line__btn modal-trigger">
+                Создать заявку
+            </a>
+            <!--menu btn mobile-->
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <img src="app/img/menu.svg" width="50" height="50" alt="">
+            </a>
+
+
+            <!-----------menu ПК--------------->
+            <ul class="menu-list right hide-on-med-and-down">
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+                <li>
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" autocomplete="off"  required>
+                            <label class="label-icon" for="search">
+                                <img src="app/img/search.svg"  alt="">
+                            </label>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+
+            <!-----------menu mobile--------------->
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--секция карточка сервиса инфо-->
+<section class="section-cart-info">
+
+    <div class="container">
+
+        <div class="section-cart-info__container clearFix">
+            <!--1-->
+            <div class="section-cart-info__elem">
+
+                <div class="section-cart-info__verified">
+                        Проверен
+                </div>
+                <div class="section-cart-info__head">
+                    Сервисный центр №1 в Санкт-Петербурге
+                </div>
+
+                <p class="section-cart-info__text">
+                    Сервисный центр в Санкт-Петербурге открыт с учетом нашего многолетнего опыта: мы постоянно совершенствуем технологии ремонта и обслуживания компьютерной техники, ищем наиболее эффективные методы. Наши специалисты периодически повышают свою квалификацию, чтобы всегда быть в курсе быстроменяющейся ситуации в мире компьютерных технологий.
+                </p>
+
+                <p class="section-cart-info__plus-head">Примемущества</p>
+
+                <div class="section-cart-info__plus clearFix">
+
+                    <div class="section-cart-info__plus-link">
+                        Выезд мастера
+                    </div>
+                    <div class="section-cart-info__plus-link">
+                        Срочный ремонт
+                    </div>
+                    <div class="section-cart-info__plus-link">
+                        Бесплатная доставка
+                    </div>
+                    <div class="section-cart-info__plus-link">
+                        Выезд мастера
+                    </div>
+                    <div class="section-cart-info__plus-link">
+                        Выезд мастера
+                    </div>
+                    <div class="section-cart-info__plus-link">
+                        Бесплатная доставка
+                    </div>
+
+                </div>
+
+            </div>
+            <!--2-->
+            <div class="section-cart-info__elem-cart ">
+
+                <div id="map" class="section-cart-info__map">
+
+                </div>
+
+                <div class="section-cart-info__address">
+
+                    <span class="address-hh">
+                        Адрес компании
+                    </span>
+                    <div class="address-metro">
+                        Сенная площадь
+                    </div>
+                    <div class="address-info">
+                        Мучной переулок, д. 3
+                    </div>
+
+                    <span class="address-hh">
+                        Режим работы
+                    </span>
+
+                    <div class="section-cart-info__mode section-cart-info__mode_b1">
+                        Будни – с 09:00 до 21:00
+                    </div>
+
+                    <div class="section-cart-info__mode section-cart-info__mode_b2">
+                        Суббота – с 10:00 до 20:00
+                    </div>
+
+                    <div class="section-cart-info__mode section-cart-info__mode_b3">
+                        Воскресенье – Выходной
+                    </div>
+
+                </div>
+
+            </div>
+            <!--3-->
+            <div class="section-cart-info__elem-info">
+
+                <div class="btn-phone">
+                    <button>
+                        Показать телефон
+                    </button>
+                </div>
+
+                <div class="section-cart-info_mar-top">
+                    <div class="section-cart-info__hh">
+                        Информация о компании
+                    </div>
+                    <div class="section-cart-info__city">
+                        Год основания: <span>2011</span>
+                    </div>
+
+                    <div class="section-cart-info__branch">
+                        Количество филиалов:<span> 2</span>
+                    </div>
+
+                    <div class="section-cart-info__person">
+                        Количество сотрудников: <span>50</span>
+                    </div>
+
+                    <div class="section-cart-info__date">
+                        Информация обновлена: <span>17.04.2018</span>
+                    </div>
+
+                    <div class="section-cart-info__site">
+                        Веб-сайт:
+                        <button>Показать</button>
+                    </div>
+
+
+                </div>
+
+                <div class="section-cart-info__rating clearFix">
+
+                    <span>Рейтинг</span>
+                    <div class="block-stars ">
+                        <div class="star2"></div>
+                        <div class="star2"></div>
+                        <div class="star2"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+
+                </div>
+
+                <div class="section-cart-info__reviews clearFix ">
+
+                    <div class="section-cart-info__btn-reviews">
+                        <button data-target="modal-message" class="modal-trigger" >Написать отзыв</button>
+                    </div>
+
+                    <div class="section-cart-info__sum">
+
+                        <div class="sum-rewiews">
+                            296 отзывов
+                        </div>
+
+                        <div class="sum-foto">
+                            12 фото
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="section-cart-info_mar-top section-cart-info__hh">
+                    Оцените компанию
+                </div>
+
+                <div class="section-cart-info__like-block">
+
+                    <div class="section-cart-info__like">
+                        Нравится
+                    </div>
+                    <div class="section-cart-info__dis-like">
+                        Не нравится
+                    </div>
+
+                </div>
+
+                <button  data-target="modal-message-2" class="section-cart-info__btn-question modal-trigger">Задать вопрос</button>
+
+                <button data-target="modal-message-3"  class="section-cart-info__btn-warning modal-trigger">пожаловаться</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--секция популярное-->
+<section class="section-pops">
+
+    <div class="container">
+
+        <div class="section-pops__container clearFix">
+
+            <div class="section-pops__container_left-block clearFix">
+
+                    <span class="section-pops__hh">
+                        Популярные виды услуг компании
+                    </span>
+
+                <div class="section-pops__company-list clearFix">
+
+                    <div class="section-pops__list">
+                        <p>Компьютерная помощь</p>
+                        <ul>
+
+                            <li><a>Удаление вирусов</a></li>
+                            <li><a >Настройка интернета</a></li>
+                            <li><a >Установка Windows</a></li>
+                            <li><a >Модернизация, апгрейд</a></li>
+                            <li><a >Настройка техники</a></li>
+                            <li><a >Установка программ</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="section-pops__list">
+                        <p>Компьютерная помощь</p>
+                        <ul>
+
+                            <li><a>Удаление вирусов</a></li>
+                            <li><a >Настройка интернета</a></li>
+                            <li><a >Установка Windows</a></li>
+                            <li><a >Модернизация, апгрейд</a></li>
+                            <li><a >Настройка техники</a></li>
+                            <li><a >Установка программ</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="section-pops__list">
+                        <p>Компьютерная помощь</p>
+                        <ul>
+
+                            <li><a>Удаление вирусов</a></li>
+                            <li><a >Настройка интернета</a></li>
+                            <li><a >Установка Windows</a></li>
+                            <li><a >Модернизация, апгрейд</a></li>
+                            <li><a >Настройка техники</a></li>
+                            <li><a >Установка программ</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="section-pops__list">
+                        <p>Компьютерная помощь</p>
+                        <ul>
+
+                            <li><a>Удаление вирусов</a></li>
+                            <li><a >Настройка интернета</a></li>
+                            <li><a >Установка Windows</a></li>
+                            <li><a >Модернизация, апгрейд</a></li>
+                            <li><a >Настройка техники</a></li>
+                            <li><a >Установка программ</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="section-pops__photo-center clearFix">
+
+                    <span class="section-pops__hh">
+                        Фотографии сервисного центра
+                    </span>
+
+                    <div class="photo-gallery clearFix">
+
+                            <a class="photo-gallery__item" data-fancybox="gallery" href="app/img/fancy/small/photo1.png">
+                                <img src="app/img/fancy/small/photo1.png">
+                            </a>
+
+                            <a class="photo-gallery__item" data-fancybox="gallery" href="app/img/fancy/small/photo23.png">
+                                <img src="app/img/fancy/small/photo23.png">
+                            </a>
+
+                            <a class="photo-gallery__item" data-fancybox="gallery" href="app/img/fancy/small/photo3.png">
+                                <img src="app/img/fancy/small/photo3.png">
+                            </a>
+
+                            <a class="photo-gallery__item" data-fancybox="gallery" href="app/img/fancy/small/photo4.png">
+                                <img src="app/img/fancy/small/photo4.png">
+                            </a>
+
+                            <a class="photo-gallery__item" data-fancybox="gallery" href="app/img/fancy/small/photo5.png">
+                                <img src="app/img/fancy/small/photo5.png">
+                            </a>
+
+                            <a class="photo-gallery__item" data-fancybox="gallery" href="app/img/fancy/small/photo6.png">
+                                <img src="app/img/fancy/small/photo6.png">
+                            </a>
+
+                    </div>
+
+
+                </div>
+
+                <div class="section-pops__brands ">
+                    <span class="section-pops__hh">Мы ремонтируем</span>
+
+                    <div class="brand-container clearFix">
+
+                        <a class="brand brand_t1"><img src="app/img/lg.svg"  alt=""></a>
+                        <a class="brand brand_t2"><img src="app/img/acer.svg"  alt=""></a>
+                        <a class="brand brand_t3"><img src="app/img/meizu.svg"  alt=""></a>
+                        <a class="brand brand_t4"><img src="app/img/apple.svg"  alt=""></a>
+                        <a class="brand brand_t5"><img src="app/img/htc.svg"  alt=""></a>
+                        <a class="brand brand_t6"><img src="app/img/sony.svg"  alt=""></a>
+                        <a class="brand brand_t7"><img src="app/img/philips.svg"  alt=""></a>
+                        <a class="brand brand_t8"><img src="app/img/android.svg"  alt=""></a>
+                        <a class="brand brand_t9"><img src="app/img/samsung.svg"  alt=""></a>
+                        <a class="brand brand_t10"><img src="app/img/google.svg"  alt=""></a>
+                        <a class="brand brand_t11"><img src="app/img/oneplus_logo.svg"  alt=""></a>
+                        <a class="brand brand_t12"><img src="app/img/asus.svg"  alt=""></a>
+
+
+                    </div>
+
+                </div>
+
+                <div class="section-pops__table">
+
+                    <span class="section-pops__hh section-pops__hh_mb">Прайс лист услуг компании</span>
+
+                    <div class="block-table">
+                        <span class="str-long">Настройка офисной техники</span>
+                        <table class="table">
+                            <thead></thead>
+                            <tbody>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                                <tr class="variant">
+                                    <td class="variant__head">
+                                        Установка Windows
+                                    </td>
+                                    <td class="variant__price">
+                                        от 4.575 руб.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="str-long">Настройка офисной техники</span>
+                        <table class="table">
+                            <tbody>
+                            <tr class="variant">
+                                <td class="variant__head">
+                                    Установка Windows
+                                </td>
+                                <td class="variant__price">
+                                    от 4.575 руб.
+                                </td>
+                            </tr>
+                            <tr class="variant">
+                                <td class="variant__head">
+                                    Установка Windows
+                                </td>
+                                <td class="variant__price">
+                                    от 4.575 руб.
+                                </td>
+                            </tr>
+                            <tr class="variant">
+                                <td class="variant__head">
+                                    Установка Windows
+                                </td>
+                                <td class="variant__price">
+                                    от 4.575 руб.
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="section-pops__review-client">
+                    <span class="section-pops__hh">
+                        Отзывы клиентов
+                    </span>
+
+                    <div class="block-client">
+
+                        <div class="block-client__elem">
+
+                            <div class="block-client__text">
+                                Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь...
+                            </div>
+                            <div class="block-stars clearFix">
+                                <div class="star2"></div>
+                                <div class="star2"></div>
+                                <div class="star2"></div>
+                                <div class="star"></div>
+                                <div class="star"></div>
+                            </div>
+                            <div class="block-client__date">
+                                29.08.2018
+                            </div>
+                            <div class="block-client__block-img clearFix">
+                                <div class="block-client__name">
+                                    Виктор Козырис
+                                </div>
+                                <div class="block-client__img">
+                                    <img src="app/img/kov.svg" alt="">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="block-client__elem">
+
+                            <div class="block-client__text">
+                                Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь...
+                            </div>
+                            <div class="block-stars ">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                            </div>
+                            <div class="block-client__date">
+                                29.08.2018
+                            </div>
+                            <div class="block-client__block-img clearFix">
+                                <div class="block-client__name">
+                                    Виктор Козырис
+                                </div>
+                                <div class="block-client__img">
+                                    <img src="app/img/kov.svg" alt="">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="block-client__elem">
+
+                            <div class="block-client__text">
+                                Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь...
+                            </div>
+                            <div class="block-stars ">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                            </div>
+                            <div class="block-client__date">
+                                29.08.2018
+                            </div>
+                            <div class="block-client__block-img clearFix">
+                                <div class="block-client__name">
+                                    Виктор Козырис
+                                </div>
+                                <div class="block-client__img">
+                                    <img src="app/img/kov.svg" alt="">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="block-client__elem">
+
+                            <div class="block-client__text">
+                                Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь...
+                            </div>
+                            <div class="block-stars ">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                                <img src="app/img/star.svg" alt="">
+                            </div>
+                            <div class="block-client__date">
+                                29.08.2018
+                            </div>
+                            <div class="block-client__block-img clearFix">
+                                <div class="block-client__name">
+                                    Виктор Козырис
+                                </div>
+                                <div class="block-client__img">
+                                    <img src="app/img/kov.svg" alt="">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <button class="section-pops__client-btn">
+                        Показать ещё отзывы
+                    </button>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="section-pops__container_right-block clearFix">
+
+                <form>
+
+                    <div class="section-pops__application">
+
+                            <span class="section-pops__hh-form">
+                                 Заявка на ремонт
+                             </span>
+
+                            <input type="text" id="cart-name" placeholder="Ваше имя">
+                            <input type="tel" id="cart-tel" placeholder="Номер телефона">
+
+                            <textarea  id="cart-text-area" placeholder="Текст сообщения"></textarea>
+                            <button id="cart-btn-app">Отправить заявку</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__info clearFix">
+                <div class="footer__contact">
+                    <div class="footer__logo">
+
+                    </div>
+                    <div class="mail">
+                        <a class="img-mail" href="mailto:hallo@servicegid.ru">
+                            <span>hallo@servicegid.ru</span>
+                        </a>
+                        <p>
+                            Пишите нам на почту
+                        </p>
+                    </div>
+                    <div class="tel">
+                        <a href="tel:+7(800)555-35-35">
+                            <span>+7 (800) 555-35-35</span>
+                        </a>
+                        <p>
+                            Звонок по России бесплатный
+                        </p>
+                    </div>
+
+                </div>
+                <div class="footer__about-us">
+
+                    <p>
+                        О Servicegid
+                    </p>
+                    <ul>
+                        <li><a href="">Как это работает?</a></li>
+                        <li><a href="">Вопрос-ответ</a></li>
+                        <li><a href="">Поиск на карте</a></li>
+                        <li><a href="">Отправить заявку</a></li>
+                    </ul>
+                </div>
+                <div class="footer__nav">
+
+                    <p>
+                        Навигация
+                    </p>
+
+                    <ul>
+                        <li><a href="">Каталог</a></li>
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Статьи</a></li>
+                        <li><a href="">Вопрос-ответ</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer__site-info">
+
+                    <p>
+                        Информация
+                    </p>
+                    <ul>
+                        <li><a href="">Cоглашение</a></li>
+                        <li><a href="">Оферта</a></li>
+                        <li><a href="">Конфиденциальность</a></li>
+                        <li><a href="">Карта сайта</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer__social-networks">
+
+                    <p>
+                        Социальные сети
+                    </p>
+
+                    <div class="social">
+
+                        <a class="social__item">
+                            <img src="app/img/vk.svg"  alt="">
+                        </a>
+                        <a class="social__item ">
+                            <img src="app/img/f.svg"  alt="">
+                        </a>
+                        <a class="social__item ">
+                            <img src="app/img/insta.svg"  alt="">
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <p class="footer__text">
+                © 2018 — ServiceGid. Все права защищены.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!----------модальные окна----------->
+<div id="modal-city" class="modal modal-city">
+    <!--<span class="modal-close modal-city__close"><img src="app/img/close.svg" width="28" height="28" alt=""></span>-->
+    <span class="modal-city__head">Выбор города</span>
+    <form>
+        <input type="search" id="search-city" class="modal-city__input-search" placeholder="Введите название города">
+    </form>
+
+    <ul class="modal-city__list">
+
+        <li><a >Москва</a></li>
+        <li><a href="">Санкт-Петербург</a></li>
+        <li><a href="">Волгоград</a></li>
+        <li><a href="">Воронеж</a></li>
+        <li><a href="">Екатеринбург</a></li>
+        <li><a href="">Казань</a></li>
+        <li><a href="">Краснодар</a></li>
+        <li><a href="">Красноярск</a></li>
+        <li><a href="">Нижний</a></li>
+        <li><a href="">Новгород</a></li>
+        <li><a href="">Новосибирск</a></li>
+        <li><a href="">Омск</a></li>
+        <li><a href="">Пермь</a></li>
+        <li><a href="">Ростов-на-Дону</a></li>
+        <li><a href="">Самара</a></li>
+        <li><a href="">Уфа</a></li>
+        <li><a href="">Челябинск</a></li>
+
+    </ul>
+
+    <div class="modal-city__btn">
+
+        <button class="modal-close cancel">
+            Отменить
+        </button>
+
+        <button class="modal-add modal-close">
+            Выбрать
+        </button>
+
+    </div>
+
+
+</div>
+
+<div id="modal-application" class="modal modal-application">
+
+    <span class="modal-application__head">Создание заявки</span>
+    <form>
+
+        <div class="modal-application__form">
+            <input type="text" id="input-text-application"  placeholder="Ваше имя">
+            <input type="tel" id="input-tel-application" placeholder="Номер телефона">
+            <input type="submit" class="modal-application__btn" value="Создать заявку">
+            <div class="modal-application__warning">
+                Нажимая кнопку “Создать заявку”, Вы принимаете условия
+                <a>Пользовательского соглашения</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<div id="modal-message" class="modal modal-message">
+
+    <span class="modal-message__head">Написать отзыв</span>
+
+    <form>
+        <input type="text" id="message-name" placeholder="Введите ваше имя">
+        <input type="email" id="message-email" placeholder="Введите ваш емайл">
+        <textarea id="message-text" placeholder="Опишите ваши впечатления"></textarea>
+        <div class="modal-message__rating clearFix">
+            <span>Укажите рейтинг</span>
+            <div class="modal-message__stars">
+                <div class="star2"></div>
+                <div class="star2"></div>
+                <div class="star2"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+        </div>
+        <button class="modal-message__btn">Отправить отзыв</button>
+    </form>
+
+</div>
+
+<div id="modal-message-2" class="modal modal-message">
+
+    <span class="modal-message__head">Задать вопрос</span>
+
+    <form>
+        <input type="text" id="message-name-2" placeholder="Введите ваше имя">
+        <input type="email" id="message-email-2" placeholder="Введите ваш емайл">
+        <input type="tel" id="message-tel-2" placeholder="Введите ваш емайл">
+        <textarea id="message-text-2" placeholder="Опишите ваши впечатления"></textarea>
+        <button class="modal-message__btn">Отправить отзыв</button>
+    </form>
+
+</div>
+
+<div id="modal-message-3" class="modal modal-message">
+
+    <span class="modal-message__head">Пожаловаться</span>
+
+    <form>
+        <select class="select">
+            <option value="">Не берут трубку</option>
+            <option value="">Неправильный телефон</option>
+            <option value="">Неправильная информация об услугах</option>
+            <option value="">Неправильная информация о ценах</option>
+            <option value="">Неправильный адрес</option>
+            <option value="">Неправильный сайт</option>
+            <option value="">Неправильное время работы</option>
+            <option value="">Грубое общение оператора или мастера</option>
+            <option value="">Другое</option>
+        </select>
+        <textarea id="message-text-3" placeholder="Опишите ваши впечатления"></textarea>
+        <button class="modal-message__btn">Подробности (необязательно)</button>
+    </form>
+
+</div>
+
+<!--btn scroll top-->
+<div id="btn-top-body"></div>
+
+
+
+<script src="app/libs/jquery-3.3.1.min.js"></script>
+<script src="app/libs/materialize/js/materialize.min.js"></script>
+<script src="app/libs/slick/slick/slick.js"></script>
+<script src="app/libs/fancybox-master/dist/jquery.fancybox.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?load=Map,Placemark,geoObject.addon.balloon&amp;lang=ru_RU" type="text/javascript"></script>
+<script src="app/js/map.js"></script>
+<script src="app/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

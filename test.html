@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="app/css/main.css">
+</head>
+<body>
+<table id="table">
+    <tbody>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>Возраст</th>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Вася</td>
+        <td>Петров</td>
+        <td>Александрович</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>14</td>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td>Петя</td>
+        <td>Иванов</td>
+        <td>Петрович</td>
+        <td>9</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+
+let table = document.querySelector('#table');
+let row = table.rows;
+let result = [];
+
+// 1 способ
+function tableSort(){
+    for (let i =0; i<row.length;i++){
+        let number = row[i];
+       //console.log(number.lastElementChild.innerHTML);
+        result.push(number);
+    }
+
+}
+
+function outTable() {
+    result.sort(function (a,b) {
+        return a.lastElementChild.innerHTML - b.lastElementChild.innerHTML
+    });
+    let html = '';
+    for(let i = 0; i<result.length; i++){
+        let cell = result[i].cells;
+        html+=`<tr>`;
+        for (let n =0; n< cell.length;n++) {
+            html+=` <td>${cell[n].innerHTML}</td> `;
+        }
+        html+=`</tr> `;
+    }
+    table.innerHTML = html;
+}
+
+
+// 2 способ
+class Str {
+    constructor(name,lastname,patronymic,age){
+        this.name = name;
+        this.lastname = lastname;
+        this.patronymic = patronymic;
+        this.age = age;
+    }
+}
+
+objTable();
+function objTable() {
+    let obj = [];
+    for(let i =0; i<row.length;i++){
+     let  objOut = new Str(row[i].children[0].innerHTML, row[i].children[1].innerHTML, row[i].children[2].innerHTML, row[i].children[3].innerHTML)
+        obj.push(objOut);
+    }
+    console.log(obj);
+    obj.sort(function (a,b) {
+      return a.age - b.age;
+    });
+    tableOutput(obj);
+}
+
+function tableOutput(obj) {
+
+    let html = '';
+    for(let i = 0; i<obj.length; i++){
+        html+=` <tr>`;
+        html+=` <td>${obj[i]['name']}</td> `;
+        html+=` <td>${obj[i]['lastname']}</td> `;
+        html+=` <td>${obj[i]['patronymic']}</td> `;
+        html+=` <td>${obj[i]['age']}</td> `;
+        html+=` </tr> `;
+    }
+    console.log(obj);
+    table.innerHTML = html;
+}
+
+
+
+//console.log(result);
+
+</script>
+
+</body>
+
+
+</html>

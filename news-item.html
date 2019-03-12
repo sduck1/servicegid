@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="app/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="app/libs/slick/slick/slick-theme.css">
+    <link rel="stylesheet" href="app/libs/slick/slick/slick.css">
+    <link rel="stylesheet" href="app/libs/fancybox-master/dist/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="app/css/main.css">
+</head>
+<body>
+
+<header>
+    <div class="clearFix container ">
+        <div class="block-logo clearFix">
+            <a href="#" class="left brand-logo">
+                <img src="app/img/logo.svg" alt="">
+            </a>
+
+            <div class="block-select right">
+
+                <a href="#modal-city" class="modal-trigger btn select-city ">
+                    Санкт-Петербург
+                </a>
+
+            </div>
+        </div>
+
+        <div class="block-acc clearFix">
+            <div class="block-acc__inAcc dr" id="dropDown">
+                <div class="text dr">Вход</div>
+            </div>
+
+            <!--dropdown content---------------------------->
+            <div id='myDropdown' class='your-account dr'>
+
+                <ul class="account-tabs tabs dr">
+                    <li class="tab dr"><a class="dr active" href="#tabs-acc1">клиент</a></li>
+                    <li class="tab dr"><a class="dr" href="#tabs-acc2">партнёр</a></li>
+                </ul>
+
+                <div id="tabs-acc1" class="your-account__tab-content dr">
+                    <form>
+
+                        <div class="your-account__form dr">
+
+                            <input type="text" id="input-text-acc" class="dr" placeholder="Имя пользователя">
+                            <input type="password" id="input-pass" class="dr" placeholder="Пароль">
+
+                            <div class="block-check">
+                                <input type="checkbox" class="dr filled-in" checked id="check-add">
+                                <label for="check-add" class="dr">
+                                    Запомнить меня
+                                </label>
+                            </div>
+
+                            <button class="your-account__btn dr">
+                                Войти в систему
+                            </button>
+
+                            <a class="dr link-pass">
+                                Забыли пароль?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="tabs-acc2" class="your-account__tab-content dr">
+                    <form>
+
+                        <div class="your-account__form dr">
+
+                            <input type="text" id="input-text-acc-partner" class="dr" placeholder="Имя пользователя">
+                            <input type="password" id="input-pass-partner" class="dr" placeholder="Пароль">
+
+                            <div class="block-check">
+                                <input type="checkbox" class="dr filled-in" checked id="check-add-partner">
+                                <label for="check-add-partner" class="dr">
+                                    Запомнить меня
+                                </label>
+                            </div>
+
+                            <button class="your-account__btn dr">
+                                Войти в систему
+                            </button>
+
+                            <a class="dr link-pass">
+                                Забыли пароль?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <!--------------------------------------------->
+            <div class="block-acc__inAcc block-acc__inAcc_right">
+                <span class="text">Регистрация</span>
+            </div>
+        </div>
+
+        <form>
+            <div class="input-field-2">
+                <input id="search-mobil" type="search" autocomplete="off"  required>
+                <label class="label-icon" for="search-mobil">
+                    <img src="app/img/search.svg"  alt="">
+                </label>
+            </div>
+        </form>
+        <!--menu btn-->
+        <div id="menu-show"  class="block-menu  dn"></div>
+
+
+        <!-----------menu mobile--------------->
+        <div id="menu-mobile-block" class="menu-list-mobile dn">
+            <ul class="dn" id="mobile-menu">
+                <li class="clearFix">
+                    <div class="block-acc-2 clearFix">
+                        <div class="block-acc-2__inAcc">
+                            <a class="text modal-trigger" href="#reger-modal-mobil">Вход</a>
+                        </div>
+                        <!--------------------------------------------->
+                        <div class="block-acc-2__inAcc block-acc-2__inAcc_right">
+                            <span class="text">Регистрация</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+                <li>
+                    <button data-target="modal-application" class="menu-list-mobile__btn modal-trigger">
+                        Создать заявку
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<!--block city mobil v-->
+<div class="block-city-mobil clearFix">
+    <span class="block-city-mobil__text">Регион:</span>
+    <a href="#modal-city" class="modal-trigger btn select-city-mobil ">
+        Санкт-Петербург
+    </a>
+</div>
+<!--filter news pages-->
+<div class="link-filter-sidenav clearFix">
+    <a href="#" id="btn-navbar-right">Фильтры</a>
+</div>
+<div id="navbar-category" class="navbar-block-category ">
+    <div class="navbar-block-category__content ">
+        <div class="navbar-block-category__head-block clearFix">
+            <span class="navbar-block-category__close"></span>
+            <span class="navbar-block-category__filter">Фильтры</span>
+        </div>
+        <div class="block-category-navbar ">
+
+            <span class="block-category-navbar__category-head">Категории</span>
+
+            <ul>
+                <li><a >Удаление вирусов <span>(138)</span></a></li>
+                <li><a >Настройка интернета<span>(138)</span></a></li>
+                <li><a >Удаление вирусов <span>(138)</span></a></li>
+                <li><a >Настройка интернета<span>(138)</span></a></li>
+                <li><a >Удаление вирусов <span>(138)</span></a></li>
+                <li><a >Настройка интернета<span>(138)</span></a></li>
+            </ul>
+
+            <button class="block-category-navbar__btn-list">Показать все</button>
+
+        </div>
+        <div class="block-category-navbar ">
+
+            <span class="block-category-navbar__category-head">Бренды</span>
+
+            <ul>
+                <li><a >Samsung <span>(138)</span></a></li>
+                <li><a >Apple<span>(138)</span></a></li>
+                <li><a >LG <span>(138)</span></a></li>
+                <li><a >Asus<span>(138)</span></a></li>
+                <li><a >Sony <span>(138)</span></a></li>
+                <li><a >HP<span>(138)</span></a></li>
+                <li><a >Panasonic <span>(138)</span></a></li>
+                <li><a >Lenovo<span>(138)</span></a></li>
+                <li><a >Huawei <span>(138)</span></a></li>
+                <li><a >Nokia<span>(138)</span></a></li>
+                <li><a >Meizu <span>(138)</span></a></li>
+                <li><a >ZTE<span>(138)</span></a></li>
+            </ul>
+
+            <button class="block-category-navbar__btn-list">Показать все</button>
+
+        </div>
+    </div>
+</div>
+
+
+<!--меню-->
+<section class="top-line ">
+
+    <div class="container">
+
+        <div class="nav-wrapper">
+            <a href="#modal-application" class="btn top-line__btn modal-trigger">
+                Создать заявку
+            </a>
+            <!--menu btn mobile-->
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <img src="app/img/menu.svg" width="50" height="50" alt="">
+            </a>
+
+
+            <!-----------menu ПК--------------->
+            <ul class="menu-list right hide-on-med-and-down">
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+                <li>
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" autocomplete="off"  required>
+                            <label class="label-icon" for="search">
+                                <img src="app/img/search.svg"  alt="">
+                            </label>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+
+            <!-----------menu mobile--------------->
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<!--секция article-->
+<section class="section-article">
+
+    <div class="container clearFix">
+
+        <div class="section-article__left clearFix">
+
+            <div class="section-article__content clearFix">
+
+
+
+                <div class="section-article__img clearFix">
+                    <img src="app/img/article.png" alt="">
+                </div>
+
+                <div class="section-article__block-text clearFix">
+
+                    <div class="section-article__block-top clearFix">
+
+                        <div class="section-article__label">
+
+                            <ul>
+                                <li>Meizu</li>
+                                <li>Смартфоны</li>
+                            </ul>
+
+                        </div>
+                        <div class="section-article__date">
+                            29.08.2018
+                        </div>
+                    </div>
+
+                    <span class="article-head">
+                        Lenovo представила новые игровые ноутбуки и десктопы Legion
+                    </span>
+
+                    <p class="text-paragraph text-paragraph_max-width">
+                        Компания Lenovo показала обновлённую линейку игровых компьютеров Legion. Среди новинок — компактные игровые ноутбуки Legion Y730 и Y530 с диксретной графикой от NVIDIA, мощные настольные десктопы в форм-факторе Tower Legion T730 и T530 и компактные компьютеры в кубическом корпусе Legion C730 и C530.
+                    </p>
+                    <p class="text-paragraph text-paragraph_max-width">
+                        Все они получили усовершенствованную систему охлаждения, предотвращающую перегрев процессора при длительной работе на максимальных нагрузках, а внешний вид устройств разработан в соответствии с пожеланиями пользователей.
+                    </p>
+                </div>
+
+                <div class="section-article__block-text section-article__block-text_max clearFix">
+
+                    <span class="article-head-2">Legion Y730 и Y530</span>
+                    <p class="text-paragraph">
+                        Новые ноутбуки Lenovo Legion ориентированы на тех, кто не только любит компьютерные игры, но и часто путешествует. Legion Y730 и Y530 получили компактные корпуса из анодированного алюминия с малой толщиной, а благодаря сдержанному дизайну они не будут выделяться даже на деловых совещаниях.
+                    </p>
+                    <p class="text-paragraph">
+                        Специально для новых ноутбуков была разработана двухконтурная система охлаждения с массивными теплотрубками, дополнительными боковыми воздухозаборами и специальной конструкцией лопастей кулеров, количество которых по сравнению с прошлым поколением было увеличено на 40%. Она обеспечивает на 16% более мощный воздушный поток и удерживает температуру процессора в среднем на 10°С ниже, чем система предыдущего поколения. В результате эффективность отвода тепла заметно возросла, при этом шум, издаваемый вентиляторами во время работы, уменьшился.
+                    </p>
+                    <p class="text-paragraph">
+
+                        Legion Y730 и Y530 на старте будут доступны только с видеокартами NVIDIA GeForce GTX 1050 Ti, но впоследствии ожидаются более мощные видеоадаптеры. Также они оснащаются процессорами до шестиядерных Intel Core i7 восьмого поколения и работают под управлением Windows 10. Клавиатуры ноутбуков обеспечивают время отклика менее 1 мс, что важно в динамичных соревновательных сюжетах. Опциональные Full HD IPS-дисплеи с частотой 144 Гц и тонкими рамками отличаются высоким цветовым охватом и яркостью — до 300 нит, обеспечивая более насыщенную и детализированную картинку в разных условиях освещения.
+                    </p>
+                    <span class="article-head-2">Legion Y730 и Y530</span>
+                    <p class="text-paragraph">
+                        Модель Lenovo Legion Y730 стала первым игровым ноутбуком с акустической системой Dolby Atmos, обеспечивающей объёмное звучания как через специально настроенные динамики, так и через наушники. Ноутбук Lenovo Legion Y530 по умолчанию поддерживает технологию Dolby Audio.
+                    </p>
+                    <span class="article-head-2">Lenovo Legion Y730</span>
+                    <p class="text-paragraph">
+                        Ноутбук Legion Y730 выпускается в вариантах с дисплеями диагональю 15 и 17 дюймов и опционально комплектуется оперативной памятью Corsair DDR4 объёмом до 16 ГБ. Кроме того, это первый в мире игровой ноутбук, укомплектованный клавиатурой Corsair iCUE с шестью дополнительными функциональными клавишами «Y» и RGB-подсветкой, позволяющей запрограммировать 16 миллионов вариантов цветовых комбинаций подсветки. Также интересными особенностями ноутбука являются белая подсветка пиктограмм задних портов и настраиваемая RGB-подсветка воздуховодов системы охлаждения.
+                    </p>
+                </div>
+
+                <div class="section-article__block-views clearFix">
+                    <div class="section-article__views">
+                        238
+                    </div>
+                    <button class="section-article__btn-share">Поделиться</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-article__right  clearFix">
+
+            <div class="block-category-navbar">
+
+                <span class="block-category-navbar__category-head">Категории</span>
+
+                <ul>
+                    <li><a >Удаление вирусов <span>(138)</span></a></li>
+                    <li><a >Настройка интернета<span>(138)</span></a></li>
+                    <li><a >Удаление вирусов <span>(138)</span></a></li>
+                    <li><a >Настройка интернета<span>(138)</span></a></li>
+                    <li><a >Удаление вирусов <span>(138)</span></a></li>
+                    <li><a >Настройка интернета<span>(138)</span></a></li>
+                </ul>
+
+                <button class="block-category-navbar__btn-list">Показать все</button>
+
+            </div>
+
+            <div class="block-category-navbar">
+
+                <span class="block-category-navbar__category-head">Бренды</span>
+
+                <ul>
+                    <li><a >Samsung <span>(138)</span></a></li>
+                    <li><a >Apple<span>(138)</span></a></li>
+                    <li><a >LG <span>(138)</span></a></li>
+                    <li><a >Asus<span>(138)</span></a></li>
+                    <li><a >Sony <span>(138)</span></a></li>
+                    <li><a >HP<span>(138)</span></a></li>
+                    <li><a >Panasonic <span>(138)</span></a></li>
+                    <li><a >Lenovo<span>(138)</span></a></li>
+                    <li><a >Huawei <span>(138)</span></a></li>
+                    <li><a >Nokia<span>(138)</span></a></li>
+                    <li><a >Meizu <span>(138)</span></a></li>
+                    <li><a >ZTE<span>(138)</span></a></li>
+                </ul>
+
+                <button class="block-category-navbar__btn-list">Показать все</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--секция news-->
+<section class="section-related-news">
+
+    <div class="container">
+
+        <span class="section-related-news__head">похожие новости</span>
+
+        <div class="section-related-news__container clearFix">
+
+            <div class="section-related-news__item clearFix">
+
+                <div class="section-related-news__img"><img src="app/img/related.png" alt=""></div>
+
+                <div class="section-related-news__img-block-2 clearFix">
+                    <div class="section-related-news__img-2"><img src="app/img/related.png" alt=""></div>
+                    <div class="block-bottom-mobil">
+                        <div class="section-related-news__date-2">
+                            25 Мая 2018
+                        </div>
+                        <div class="section-related-news__views-2">
+                            238
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-related-news__info clearFix">
+
+                    <div class="section-related-news__block-num clearFix">
+                        <div class="section-related-news__date">
+                            25 Мая 2018
+                        </div>
+                        <div class="section-related-news__views">
+                            238
+                        </div>
+                    </div>
+
+                    <span class="section-related-news__item-head">
+                        Цукерберг не будет платить компенсацию европейцам
+                    </span>
+                    <div class="section-related-news__label clearFix">
+                        <ul>
+                            <li>Meizu</li>
+                            <li>Смартфоны</li>
+                        </ul>
+
+                    </div>
+                    <p class="section-related-news__item-text">
+                        Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда
+                    </p>
+
+                    <div class="section-related-news__item-bottom clearFix">
+
+                        <a class="section-related-news__btn">Читать</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="section-related-news__item clearFix">
+
+                <div class="section-related-news__img"><img src="app/img/related.png" alt=""></div>
+
+                <div class="section-related-news__img-block-2 clearFix">
+                    <div class="section-related-news__img-2"><img src="app/img/related.png" alt=""></div>
+                    <div class="block-bottom-mobil">
+                        <div class="section-related-news__date-2">
+                            25 Мая 2018
+                        </div>
+                        <div class="section-related-news__views-2">
+                            238
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-related-news__info clearFix">
+
+                    <div class="section-related-news__block-num clearFix">
+                        <div class="section-related-news__date">
+                            25 Мая 2018
+                        </div>
+                        <div class="section-related-news__views">
+                            238
+                        </div>
+                    </div>
+
+                    <span class="section-related-news__item-head">
+                        Цукерберг не будет платить компенсацию европейцам
+                    </span>
+                    <div class="section-related-news__label clearFix">
+                        <ul>
+                            <li>Meizu</li>
+                            <li>Смартфоны</li>
+                        </ul>
+
+                    </div>
+                    <p class="section-related-news__item-text">
+                        Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда
+                    </p>
+
+                    <div class="section-related-news__item-bottom clearFix">
+
+                        <a class="section-related-news__btn">Читать</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="section-related-news__item clearFix">
+
+                <div class="section-related-news__img"><img src="app/img/related.png" alt=""></div>
+
+                <div class="section-related-news__img-block-2 clearFix">
+                    <div class="section-related-news__img-2"><img src="app/img/related.png" alt=""></div>
+                    <div class="block-bottom-mobil">
+                        <div class="section-related-news__date-2">
+                            25 Мая 2018
+                        </div>
+                        <div class="section-related-news__views-2">
+                            238
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-related-news__info clearFix">
+
+                    <div class="section-related-news__block-num clearFix">
+                        <div class="section-related-news__date">
+                            25 Мая 2018
+                        </div>
+                        <div class="section-related-news__views">
+                            238
+                        </div>
+                    </div>
+
+                    <span class="section-related-news__item-head">
+                        Цукерберг не будет платить компенсацию европейцам
+                    </span>
+                    <div class="section-related-news__label clearFix">
+                        <ul>
+                            <li>Meizu</li>
+                            <li>Смартфоны</li>
+                        </ul>
+
+                    </div>
+                    <p class="section-related-news__item-text">
+                        Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда
+                    </p>
+
+                    <div class="section-related-news__item-bottom clearFix">
+
+                        <a class="section-related-news__btn">Читать</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__info clearFix">
+                <div class="footer__contact">
+                    <div class="footer__logo">
+
+                    </div>
+                    <div class="mail">
+                        <a class="img-mail" href="mailto:hallo@servicegid.ru">
+                            <span>hallo@servicegid.ru</span>
+                        </a>
+                        <p>
+                            Пишите нам на почту
+                        </p>
+                    </div>
+                    <div class="tel">
+                        <a href="tel:+7(800)555-35-35">
+                            <span>+7 (800) 555-35-35</span>
+                        </a>
+                        <p>
+                            Звонок по России бесплатный
+                        </p>
+                    </div>
+
+                </div>
+                <div class="footer__about-us">
+
+                    <p>
+                        О Servicegid
+                    </p>
+                    <ul>
+                        <li><a href="">Как это работает?</a></li>
+                        <li><a href="">Вопрос-ответ</a></li>
+                        <li><a href="">Поиск на карте</a></li>
+                        <li><a href="">Отправить заявку</a></li>
+                    </ul>
+                </div>
+                <div class="footer__nav">
+
+                    <p>
+                        Навигация
+                    </p>
+
+                    <ul>
+                        <li><a href="">Каталог</a></li>
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Статьи</a></li>
+                        <li><a href="">Вопрос-ответ</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer__site-info">
+
+                    <p>
+                        Информация
+                    </p>
+                    <ul>
+                        <li><a href="">Cоглашение</a></li>
+                        <li><a href="">Оферта</a></li>
+                        <li><a href="">Конфиденциальность</a></li>
+                        <li><a href="">Карта сайта</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer__social-networks">
+
+                    <p>
+                        Социальные сети
+                    </p>
+
+                    <div class="social">
+
+                        <a class="social__item">
+                            <img src="app/img/vk.svg"  alt="">
+                        </a>
+                        <a class="social__item ">
+                            <img src="app/img/f.svg"  alt="">
+                        </a>
+                        <a class="social__item ">
+                            <img src="app/img/insta.svg"  alt="">
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <p class="footer__text">
+                © 2018 — ServiceGid. Все права защищены.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!----------модальные окна----------->
+<div id="modal-city" class="modal modal-city">
+    <!--<span class="modal-close modal-city__close"><img src="app/img/close.svg" width="28" height="28" alt=""></span>-->
+    <span class="modal-city__head">Выбор города</span>
+    <form>
+        <input type="search" id="search-city" class="modal-city__input-search" placeholder="Введите название города">
+    </form>
+
+    <ul class="modal-city__list">
+
+        <li><a >Москва</a></li>
+        <li><a href="">Санкт-Петербург</a></li>
+        <li><a href="">Волгоград</a></li>
+        <li><a href="">Воронеж</a></li>
+        <li><a href="">Екатеринбург</a></li>
+        <li><a href="">Казань</a></li>
+        <li><a href="">Краснодар</a></li>
+        <li><a href="">Красноярск</a></li>
+        <li><a href="">Нижний</a></li>
+        <li><a href="">Новгород</a></li>
+        <li><a href="">Новосибирск</a></li>
+        <li><a href="">Омск</a></li>
+        <li><a href="">Пермь</a></li>
+        <li><a href="">Ростов-на-Дону</a></li>
+        <li><a href="">Самара</a></li>
+        <li><a href="">Уфа</a></li>
+        <li><a href="">Челябинск</a></li>
+
+    </ul>
+
+    <div class="modal-city__btn">
+
+        <button class="modal-close cancel">
+            Отменить
+        </button>
+
+        <button class="modal-add modal-close">
+            Выбрать
+        </button>
+
+    </div>
+
+
+</div>
+
+<div id="modal-application" class="modal modal-application">
+
+    <span class="modal-application__head">Создание заявки</span>
+    <form>
+
+        <div class="modal-application__form">
+            <input type="text" id="input-text-application"  placeholder="Ваше имя">
+            <input type="tel" id="input-tel-application" placeholder="Номер телефона">
+            <input type="submit" class="modal-application__btn" value="Создать заявку">
+            <div class="modal-application__warning">
+                Нажимая кнопку “Создать заявку”, Вы принимаете условия
+                <a>Пользовательского соглашения</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+
+
+<script src="app/libs/jquery-3.3.1.min.js"></script>
+<script src="app/libs/materialize/js/materialize.min.js"></script>
+<script src="app/libs/slick/slick/slick.js"></script>
+<script src="app/libs/fancybox-master/dist/jquery.fancybox.min.js"></script>
+<script src="app/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

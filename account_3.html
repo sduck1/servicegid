@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="app/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="app/libs/slick/slick/slick-theme.css">
+    <link rel="stylesheet" href="app/libs/slick/slick/slick.css">
+    <link rel="stylesheet" href="app/css/main.css?v=1">
+</head>
+<body>
+
+<header>
+    <div class="clearFix container ">
+        <div class="block-logo clearFix">
+            <a href="#" class="left brand-logo">
+                <img src="app/img/logo.svg" alt="">
+            </a>
+
+            <div class="block-select right">
+
+                <a href="#modal-city" class="modal-trigger btn select-city ">
+                    Санкт-Петербург
+                </a>
+
+            </div>
+        </div>
+
+        <div class="block-acc clearFix">
+            <div class="block-acc__inAcc dr" id="dropDown">
+                <div class="text dr">Вход</div>
+            </div>
+
+            <!--dropdown content---------------------------->
+            <div id='myDropdown' class='your-account dr'>
+
+                <ul class="account-tabs tabs dr">
+                    <li class="tab dr"><a class="dr active" href="#tabs-acc1">клиент</a></li>
+                    <li class="tab dr"><a class="dr" href="#tabs-acc2">партнёр</a></li>
+                </ul>
+
+                <div id="tabs-acc1" class="your-account__tab-content dr">
+                    <form>
+
+                        <div class="your-account__form dr">
+
+                            <input type="text" id="input-text-acc" class="dr" placeholder="Имя пользователя">
+                            <input type="password" id="input-pass" class="dr" placeholder="Пароль">
+
+                            <div class="block-check">
+                                <input type="checkbox" class="dr filled-in" checked id="check-add">
+                                <label for="check-add" class="dr">
+                                    Запомнить меня
+                                </label>
+                            </div>
+
+                            <button class="your-account__btn dr">
+                                Войти в систему
+                            </button>
+
+                            <a class="dr link-pass">
+                                Забыли пароль?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="tabs-acc2" class="your-account__tab-content dr">
+                    <form>
+
+                        <div class="your-account__form dr">
+
+                            <input type="text" id="input-text-acc-partner" class="dr" placeholder="Имя пользователя">
+                            <input type="password" id="input-pass-partner" class="dr" placeholder="Пароль">
+
+                            <div class="block-check">
+                                <input type="checkbox" class="dr filled-in" checked id="check-add-partner">
+                                <label for="check-add-partner" class="dr">
+                                    Запомнить меня
+                                </label>
+                            </div>
+
+                            <button class="your-account__btn dr">
+                                Войти в систему
+                            </button>
+
+                            <a class="dr link-pass">
+                                Забыли пароль?
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <!--------------------------------------------->
+            <div class="block-acc__inAcc block-acc__inAcc_right">
+                <span class="text">Регистрация</span>
+            </div>
+        </div>
+
+        <form>
+            <div class="input-field-2">
+                <input id="search-mobil" type="search" autocomplete="off"  required>
+                <label class="label-icon" for="search-mobil">
+                    <img src="app/img/search.svg"  alt="">
+                </label>
+            </div>
+        </form>
+        <!--menu btn-->
+        <div id="menu-show"  class="block-menu  dn"></div>
+
+
+        <!-----------menu mobile--------------->
+        <div id="menu-mobile-block" class="menu-list-mobile dn">
+            <ul class="dn" id="mobile-menu">
+                <li class="clearFix">
+                    <div class="block-acc-2 clearFix">
+                        <div class="block-acc-2__inAcc">
+                            <a class="text modal-trigger" href="#reger-modal-mobil">Вход</a>
+                        </div>
+                        <!--------------------------------------------->
+                        <div class="block-acc-2__inAcc block-acc-2__inAcc_right">
+                            <span class="text">Регистрация</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+                <li>
+                    <button data-target="modal-application" class="menu-list-mobile__btn modal-trigger">
+                        Создать заявку
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<!--block city mobil v-->
+<div class="block-city-mobil clearFix">
+    <span class="block-city-mobil__text">Регион:</span>
+    <a href="#modal-city" class="modal-trigger btn select-city-mobil ">
+        Санкт-Петербург
+    </a>
+</div>
+<!--меню-->
+<section class="top-line ">
+
+    <div class="container">
+
+        <div class="nav-wrapper">
+            <a href="#modal-application" class="btn top-line__btn modal-trigger">
+                Создать заявку
+            </a>
+            <!--menu btn mobile-->
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <img src="app/img/menu.svg" width="50" height="50" alt="">
+            </a>
+
+
+            <!-----------menu ПК--------------->
+            <ul class="menu-list right hide-on-med-and-down">
+                <li><a href="#">Каталог</a></li>
+                <li><a href="#">юр лицам </a></li>
+                <li><a href="#">Вопрос ответ</a></li>
+                <li><a href="#">Статьи </a></li>
+                <li><a href="#">Новости </a></li>
+                <li>
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" autocomplete="off"  required>
+                            <label class="label-icon" for="search">
+                                <img src="app/img/search.svg"  alt="">
+                            </label>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--секция account-->
+<section class="section-account-header">
+
+    <div class="container">
+
+        <div class="section-account-header__warning">
+            Правилами каталога заперещены повторные добавления объявлений о сервисных центрах и частных мастерах.
+        </div>
+
+        <div class="section-account-header__text">
+            Любые попытки исказить информацию и добавиться повторно будут караться удалением всей информации о вашем СЦ с занесением в чёрный список для дальнейшего отсеивания. Все объявления и изменения в них проходят ручную модерацию и проверку. В нашем чёрном списке недобросовестных пользователей уже более <b>180 сервисных центров</b>, информация о которых никогда не будет размещена на нашем сайте
+        </div>
+
+    </div>
+
+</section>
+
+<!--section form-->
+<section class="section-account">
+
+    <div class="container">
+
+        <span class="section-account__head">Добавление сервисного центра. Шаг 3 из 4</span>
+
+        <div class="section-account__content">
+
+            <span class="section-account__content-head">Описание услуг</span>
+            <span class="section-account__head-small">Услуги</span>
+            <div class="section-account__group-check">
+
+                <div class="section-account__check-label">
+                    <input id="account3_1" type="checkbox" class="check-reg2 filled-in">
+                    <label for="account3_1" class="label-mobil"></label>
+                    <label for="account3_1">Выезд к заказчику для осуществления работ по ремонту/обслуживанию (ремонт на дому)</label>
+                </div>
+
+                <div class="section-account__check-label">
+                    <input id="account3_2" type="checkbox" class="check-reg2 filled-in">
+                    <label for="account3_2" class="label-mobil"></label>
+                    <label for="account3_2">Доставка от/к заказчику объекта работ (курьер забирает и привозит обратно после ремонта)</label>
+                </div>
+
+                <div class="section-account__check-label">
+                    <input id="account3_3" type="checkbox" class="check-reg2 filled-in">
+                    <label for="account3_3" class="label-mobil"></label>
+                    <label for="account3_3">Продажа запасных частей/деталей и расходных материалов</label>
+                    <p>Замена или заправка картрижей, замена экранов на телефонах, барабанов в стиральных машинах, продажа и т.д</p>
+                </div>
+
+                <div class="section-account__check-label">
+                    <input id="account3_4" type="checkbox" class="check-reg2 filled-in">
+                    <label for="account3_4" class="label-mobil"></label>
+                    <label for="account3_4">Выезд к заказчику для осуществления работ по ремонту/обслуживанию (ремонт на дому)</label>
+                    <p>
+                        Относится к исправным объектам. Например: установка сантехники или стиральных машин, спутникового телевидения или других сложных объектов
+                    </p>
+                </div>
+
+            </div>
+
+            <span class="section-account__head-small">Описание</span>
+
+            <div class="section-account__input">
+                <textarea class="textarea-reg" placeholder="Коротко опишите ваши услуги"></textarea>
+            </div>
+
+            <div class="section-account__heed">
+                <b>Уважаемые вебмастеры, представители сервисных центров и SEOшники!</b> Убедительная просьба в данное поле писать лишь дополнительную информацию, которую невозможно указать при помощи имеющихся полей. Не нужно повторять список услуг и производителей (которые есть в списках. если нет - можно), контакты и т.д. Запрещается вводить оптимизированные для поисковых систем тошнотные тексты. Вся информация проходит модерацию. При нарушении данного правила, данные будут удалены без возможности повторного добавления.
+            </div>
+
+            <span class="section-account__head-small">Настройки</span>
+
+            <div class="section-account__check-label">
+                <input id="account3_5" type="checkbox" class="check-reg2 filled-in">
+                <label for="account3_5" class="label-mobil"></label>
+                <label for="account3_5">Разрешить добавление вопросов через сайт</label>
+                <p>Позволяет сервисным центрам накапливать базу ответов на типичные вопросы, а посетителям сайта — спрашивать, делать уточннения</p>
+            </div>
+
+            <div class="section-account__check-label">
+                <input id="account3_6" type="checkbox" class="check-reg2 filled-in">
+                <label for="account3_6" class="label-mobil"></label>
+                <label for="account3_6">Оповещать меня на о новых вопросах на мой регистрационный E-mail (hallo@servicegid.ru)</label>
+            </div>
+
+        </div>
+
+
+        <div class="block-stage clearFix">
+
+            <button class="block-stage__btn-prev">Предыдущий шаг</button>
+
+            <div class="block-step clearFix">
+
+                <div class="block-step__elem block-selected">
+                    <div class="block-step__item">1</div>
+                    <p>Шаг 1</p>
+                </div>
+
+                <div class="block-step__elem block-selected">
+                    <div class="block-step__item">2</div>
+                    <p>Шаг 2</p>
+                </div>
+
+                <div class="block-step__elem block-selected">
+                    <div class="block-step__item">3</div>
+                    <p>Шаг 3</p>
+                </div>
+
+                <div class="block-step__elem ">
+                    <div class="block-step__item block-step__item_lust">4</div>
+                    <p>Шаг 4</p>
+                </div>
+            </div>
+
+            <button class="block-stage__btn-next">Следующий шаг</button>
+
+            <div class="block-stage__btn-mobil clearFix">
+                <button class="block-stage__btn-prev-mobil">Предыдущий шаг</button>
+                <button class="block-stage__btn-next-mobil">Следующий шаг</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--footer-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__info clearFix">
+                <div class="footer__contact clearFix">
+                    <div class="footer__logo">
+
+                    </div>
+                    <div class="mail">
+                        <a class="img-mail" href="mailto:hallo@servicegid.ru">
+                            <span>hallo@servicegid.ru</span>
+                        </a>
+                        <p>
+                            Пишите нам на почту
+                        </p>
+                    </div>
+                    <div class="tel">
+                        <a href="tel:+7(800)555-35-35">
+                            <span>+7 (800) 555-35-35</span>
+                        </a>
+                        <p>
+                            Звонок по России бесплатный
+                        </p>
+                    </div>
+
+                </div>
+                <div class="footer__about-us">
+
+                    <p>
+                        О Servicegid
+                    </p>
+                    <ul>
+                        <li><a href="">Как это работает?</a></li>
+                        <li><a href="">Вопрос-ответ</a></li>
+                        <li><a href="">Поиск на карте</a></li>
+                        <li><a href="">Отправить заявку</a></li>
+                    </ul>
+                </div>
+                <div class="footer__nav">
+
+                    <p>
+                        Навигация
+                    </p>
+
+                    <ul>
+                        <li><a href="">Каталог</a></li>
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Статьи</a></li>
+                        <li><a href="">Вопрос-ответ</a></li>
+                        <li><a href="">Контакты</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer__site-info">
+
+                    <p>
+                        Информация
+                    </p>
+                    <ul>
+                        <li><a href="">Cоглашение</a></li>
+                        <li><a href="">Оферта</a></li>
+                        <li><a href="">Конфиденциальность</a></li>
+                        <li><a href="">Карта сайта</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer__social-networks">
+
+                    <p>
+                        Социальные сети
+                    </p>
+
+                    <div class="social">
+
+                        <a class="social__item">
+                            <img src="app/img/vk.svg"  alt="">
+                        </a>
+                        <a class="social__item ">
+                            <img src="app/img/f.svg"  alt="">
+                        </a>
+                        <a class="social__item ">
+                            <img src="app/img/insta.svg"  alt="">
+                        </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <p class="footer__text">
+                © 2018 — ServiceGid. Все права защищены.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!----------модальные окна----------->
+<div id="modal-city" class="modal modal-city">
+    <!--<span class="modal-close modal-city__close"><img src="app/img/close.svg" width="28" height="28" alt=""></span>-->
+    <span class="modal-city__head">Выбор города</span>
+    <form>
+        <input type="search" id="search-city" class="modal-city__input-search" placeholder="Введите название города">
+    </form>
+
+    <ul class="modal-city__list">
+
+        <li><a >Москва</a></li>
+        <li><a href="">Санкт-Петербург</a></li>
+        <li><a href="">Волгоград</a></li>
+        <li><a href="">Воронеж</a></li>
+        <li><a href="">Екатеринбург</a></li>
+        <li><a href="">Казань</a></li>
+        <li><a href="">Краснодар</a></li>
+        <li><a href="">Красноярск</a></li>
+        <li><a href="">Нижний</a></li>
+        <li><a href="">Новгород</a></li>
+        <li><a href="">Новосибирск</a></li>
+        <li><a href="">Омск</a></li>
+        <li><a href="">Пермь</a></li>
+        <li><a href="">Ростов-на-Дону</a></li>
+        <li><a href="">Самара</a></li>
+        <li><a href="">Уфа</a></li>
+        <li><a href="">Челябинск</a></li>
+
+    </ul>
+
+    <div class="modal-city__btn">
+
+        <button class="modal-close cancel">
+            Отменить
+        </button>
+
+        <button class="modal-add modal-close">
+            Выбрать
+        </button>
+
+    </div>
+
+
+</div>
+
+<div id="modal-application" class="modal modal-application">
+    <!--<span class="block-x"><img src="app/img/x.svg" alt=""></span>-->
+    <span class="modal-application__head">Создание заявки</span>
+    <form>
+
+        <div class="modal-application__form">
+            <input type="text" id="input-text-application"  placeholder="Ваше имя">
+            <input type="tel" id="input-tel-application" placeholder="Номер телефона">
+            <input type="submit" class="modal-application__btn" value="Создать заявку">
+            <div class="modal-application__warning">
+                Нажимая кнопку “Создать заявку”, Вы принимаете условия
+                <a>Пользовательского соглашения</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+<div id="reger-modal-mobil" class="modal your-account-2">
+
+    <ul class="account-tabs tabs ">
+        <li class="tab "><a class=" active" href="#tabs-acc1-mobil">клиент</a></li>
+        <li class="tab "><a class="" href="#tabs-acc2-mobil">партнёр</a></li>
+    </ul>
+
+    <div id="tabs-acc1-mobil" class="your-account-2__tab-content dr">
+        <form>
+
+            <div class="your-account__form dr">
+
+                <input type="text" id="input-text-acc-mobil"  placeholder="Имя пользователя">
+                <input type="password" id="input-pass-mobil"  placeholder="Пароль">
+
+                <div class="block-check">
+                    <input type="checkbox" class="filled-in" checked id="check-add-mobil">
+                    <label for="check-add-mobil" class="">
+                        Запомнить меня
+                    </label>
+                </div>
+
+                <button class="your-account-2__btn dr">
+                    Войти в систему
+                </button>
+
+                <a class="link-pass-2">
+                    Забыли пароль?
+                </a>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="tabs-acc2-mobil" class="your-account-2__tab-content dr">
+        <form>
+
+            <div class="your-account__form dr">
+
+                <input type="text" id="input-text-acc-mobil-partner"  placeholder="Имя пользователя">
+                <input type="password" id="input-pass-mobil-partner"  placeholder="Пароль">
+
+                <div class="block-check">
+                    <input type="checkbox" class="filled-in" checked id="check-add-mobil-partner">
+                    <label for="check-add-mobil" class="">
+                        Запомнить меня
+                    </label>
+                </div>
+
+                <button class="your-account-2__btn dr">
+                    Войти в систему
+                </button>
+
+                <a class="link-pass-2">
+                    Забыли пароль?
+                </a>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+<!--btn scroll top-->
+<div id="btn-top-body"></div>
+<!-----add category-->
+<div id="add-category" class="modal add-category clearFix">
+
+    <span class="add-category__head">Выберите оказываемые услуги</span>
+
+    <div class="add-category__content">
+        <div class="add-category__item">
+            <input id="service1" class="check-reg2 filled-in" type="checkbox">
+            <label for="service1"></label>
+            <label for="service1">Ремонт, замена битых матриц и тачскринов</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service2" class="check-reg2 filled-in" type="checkbox">
+            <label for="service2"></label>
+            <label for="service2">Ремонт, замена гнезда USB аудио и зарядки</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service3" class="check-reg2 filled-in" type="checkbox">
+            <label for="service3"></label>
+            <label for="service3">Ремонт, замена блока зарядки на материнской плате</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service4" class="check-reg2 filled-in" type="checkbox">
+            <label for="service4"></label>
+            <label for="service4">Ремонт, замена зарядного устройства, кабелей питания со штекерами</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service5" class="check-reg2 filled-in" type="checkbox">
+            <label for="service5"></label>
+            <label for="service5">Ремонт, замена материнской платы и ее компонентов</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service6" class="check-reg2 filled-in" type="checkbox">
+            <label for="service6"></label>
+            <label for="service6">Перепрошивка и восстановление ОС-Андроид и IOS</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service7" class="check-reg2 filled-in" type="checkbox">
+            <label for="service7"></label>
+            <label for="service7">Замена, ремонт аккумулятора</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service8" class="check-reg2 filled-in" type="checkbox">
+            <label for="service8"></label>
+            <label for="service8">Замена, ремонт кнопок</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service9" class="check-reg2 filled-in" type="checkbox">
+            <label for="service9"></label>
+            <label for="service9">Отвязка от операторов сотовой связи</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service10" class="check-reg2 filled-in" type="checkbox">
+            <label for="service10"></label>
+            <label for="service10">Очистка системного блока и системы охлаждения от пыли</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service11" class="check-reg2 filled-in" type="checkbox">
+            <label for="service11"></label>
+            <label for="service11">Ремонт, замена динамиков и микрофонов</label>
+        </div>
+        <div class="add-category__item">
+            <input id="service12" class="check-reg2 filled-in" type="checkbox">
+            <label for="service12"></label>
+            <label for="service12">Замена экрана</label>
+        </div>
+    </div>
+
+    <button class="add-category__btn ">Выбрать</button>
+
+</div>
+
+<script src="app/libs/jquery-3.3.1.min.js"></script>
+<script src="app/libs/materialize/js/materialize.min.js"></script>
+<script src="app/libs/slick/slick/slick.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?load=Map,Placemark,geoObject.addon.balloon&amp;lang=ru_RU" type="text/javascript"></script>
+<script src="app/js/map.js"></script>
+<script src="app/js/script.js"></script>
+
+</body>
+</html>
